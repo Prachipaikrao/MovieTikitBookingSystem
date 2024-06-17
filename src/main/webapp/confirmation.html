@@ -1,0 +1,35 @@
+<!-- confirmation.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Confirmation</title>
+  <style>
+    /* Basic styling for layout */
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Booking Confirmation</h2>
+  <p>Movie: <span id="confirmed-movie"></span></p>
+  <p>Seats: <span id="confirmed-seats"></span></p>
+  <!-- Add more confirmation details as needed -->
+
+  <script>
+    // Extract movie and selected seats from URL query parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const movieTitle = urlParams.get('movie');
+    const selectedSeatsStr = urlParams.get('seats');
+    const selectedSeats = selectedSeatsStr ? selectedSeatsStr.split(',') : [];
+
+    // Display confirmed movie and selected seats
+    document.getElementById('confirmed-movie').textContent = movieTitle;
+    document.getElementById('confirmed-seats').textContent = selectedSeats.join(', ');
+    // Add more logic to display other confirmation details (showtime, total price, etc.)
+  </script>
+</body>
+</html>

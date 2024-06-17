@@ -1,0 +1,92 @@
+<!-- payment.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment</title>
+ <style>
+    .b
+   {
+   background-color:#87CEEB;
+   }
+   
+
+   
+   
+ .parent {
+ 
+ margin-left:1px;
+  padding: 2rem 2rem;
+  text-align: center;
+
+  width: 90%;
+}
+.c {
+  display: inline-block;
+
+  padding: 1rem 1rem;
+  margin-top:200px;
+  height: 400px;
+  width: 460px;
+  text-align: center;
+  background-image:url("payment.jpg");
+
+
+  float:left;
+}
+
+.child1 {
+  display: inline-block;
+
+  padding: 1rem 1rem;
+  height: 500px;
+  width: 500px;
+  text-align: center;
+  vertical-align: middle;
+  float:right;
+}
+
+  </style>
+</head>
+<body class="b">
+
+
+    <div class='parent'>
+ <div class='c'>
+ </div>
+
+        <div class='child1'>
+          <div class='c3'>
+ <form method="post" action="EmailConfirmation.html">
+  <h2>Booking Information</h2>
+  <p>Movie: <span id="movie-title"></span></p>
+  <p>Selected Seats: <span id="selected-seats"></span></p>
+  
+ Movie Name: <input type="text" style="width:300px;"  id="user" name="name" required><br><br><br>
+Seat Number: <input type="text" style="width:300px;"  id="user" name="n" required><br><br><br>
+  <!-- Add payment form fields and integration with a payment gateway -->
+  <form id="payment-form">
+    <!-- Payment form fields (credit card info, etc.) -->
+    <button type="submit" onclick="confirmBooking()">Book Now</button>
+  </form>
+
+  <script>
+    // Extract movie and selected seats from URL query parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const movieTitle = urlParams.get('movie');
+    const selectedSeatsStr = urlParams.get('seats');
+    const selectedSeats = selectedSeatsStr ? selectedSeatsStr.split(',') : [];
+
+    // Display movie title and selected seats
+    document.getElementById('movie-title').textContent = movieTitle;
+    document.getElementById('selected-seats').textContent = selectedSeats.join(', ');
+
+    // Function to confirm booking (placeholder for actual payment gateway integration)
+    function confirmBooking() {
+      // Example: Redirect to confirmation page after successful payment
+      window.location.href = 'EmailConfirmation.html'; // Replace with actual confirmation page
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cancel Movie Ticket</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <style type="text/css">
+
+    
+
+    
+
+    body {
+
+    font-family: Arial, sans-serif;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    height: 100vh;
+
+    margin: 0;
+
+    background-color: #f4f4f4;
+
+}
+
+
+
+.container {
+
+    background: #fff;
+
+    padding: 50px;
+
+    border-radius: 8px;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    width: 300px;
+
+    text-align: center;
+
+}
+
+
+
+h1 {
+
+    margin-bottom: 20px;
+
+}
+
+
+
+form {
+
+    margin-bottom: 20px;
+
+}
+
+
+
+label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+}
+
+
+
+input[type="text"] {
+
+    width: 100%;
+
+    padding: 8px;
+
+    margin-bottom: 10px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 4px;
+
+}
+
+
+  .b
+   {
+   background-color:#87CEEB;
+   }
+button {
+
+    padding: 10px 20px;
+
+    border: none;
+
+    background-color: #007BFF;
+
+    color: white;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+
+}
+
+
+
+button:hover {
+
+    background-color: #0056b3;
+
+}
+
+
+
+#message {
+
+    margin-top: 20px;
+
+    color: red;
+
+}
+
+
+
+#bookedSeats {
+
+    list-style-type: none;
+
+    padding: 0;
+
+}
+
+
+
+#bookedSeats li {
+
+    background: #007BFF;
+
+    color: white;
+
+    padding: 10px;
+
+    margin: 5px 0;
+
+    border-radius: 4px;
+
+}
+
+    
+
+    
+
+    
+
+    
+
+    
+
+ .container1 {
+
+    background: #fff;
+
+    padding: 20px;
+
+    border-radius: 8px;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    width: 300px;
+
+    text-align: center;
+
+    float:right;
+
+    left-margin:600px;
+
+}
+
+
+
+h1 {
+
+    margin-bottom: 20px;
+
+}
+
+
+
+form {
+
+    margin-bottom: 20px;
+
+}
+
+
+
+label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+}
+
+
+
+input[type="text"], select {
+
+    width: 100%;
+
+    padding: 8px;
+
+    margin-bottom: 10px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 4px;
+
+}
+
+
+
+button {
+
+    padding: 10px 20px;
+
+    border: none;
+
+    background-color: #007BFF;
+
+    color: white;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+
+}
+
+
+
+button:hover {
+
+    background-color: #0056b3;
+
+}
+
+
+
+ul {
+
+    list-style-type: none;
+
+    padding: 0;
+
+}
+
+
+
+li {
+
+    background: #007BFF;
+
+    color: white;
+
+    padding: 10px;
+
+    margin: 5px 0;
+
+    border-radius: 4px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+
+li button {
+
+    background: red;
+
+    border: none;
+
+    padding: 5px 10px;
+
+    color: white;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+
+}
+
+
+
+li button:hover {
+
+    background: darkred;
+
+}   
+
+    
+
+    </style>
+
+</head>
+
+<body class="b">
+
+    <div class="container">
+
+        <h1>Cancel Movie Ticket</h1>
+
+        <form id="cancelForm">
+
+            <label for="seatNumber">Seat Number:</label>
+
+            <input type="text" id="seatNumber" name="seatNumber" required>
+
+            <button type="submit">Cancel Ticket</button>
+
+        </form>
+
+        <div id="message"></div>
+
+        <h2>Booked Seats</h2>
+
+        <ul id="bookedSeats">
+
+            <!-- Booked seats will be listed here -->
+
+        </ul>
+
+    </div>
+
+    
+
+    <div class="container1">
+
+        <h1>Food Menu Management</h1>
+
+        <form id="menuForm">
+
+            <label for="menuItem">Menu Item:</label>
+
+            <input type="text" id="menuItem" name="menuItem" required>
+
+            <label for="category">Category:</label>
+
+            <select id="category" name="category" required>
+
+                <option value="food">Food</option>
+
+                <option value="beverage">Beverage</option>
+
+            </select>
+
+            <button type="submit">Add Item</button>
+
+        </form>
+
+        <h2>Food Menu</h2>
+
+        <ul id="foodMenu">
+
+            <!-- Food items will be listed here -->
+
+        </ul>
+
+        <h2>Beverage Menu</h2>
+
+        <ul id="beverageMenu">
+
+            <!-- Beverage items will be listed here -->
+
+        </ul>
+
+    </div>
+
+    
+
+    
+
+    <script>document.addEventListener('DOMContentLoaded', () => {
+
+        const bookedSeats = ['1-1', '1-2', '1-3', '1-4', '1-5','1-6','1-7','1-8','2-1','2-2','2-3','2-4']; // Example booked seats
+
+        const bookedSeatsList = document.getElementById('bookedSeats');
+
+        const message = document.getElementById('message');
+
+
+
+        function renderBookedSeats() {
+
+            bookedSeatsList.innerHTML = '';
+
+            bookedSeats.forEach(seat => {
+
+                const li = document.createElement('li');
+
+                li.textContent = seat;
+
+                bookedSeatsList.appendChild(li);
+
+            });
+
+        }
+
+
+
+        document.getElementById('cancelForm').addEventListener('submit', (e) => {
+
+            e.preventDefault();
+
+            const seatNumber = document.getElementById('seatNumber').value.toUpperCase();
+
+            const seatIndex = bookedSeats.indexOf(seatNumber);
+
+
+
+            if (seatIndex !== -1) {
+
+                bookedSeats.splice(seatIndex, 1);
+
+                message.textContent = `Ticket for seat ${seatNumber} has been cancelled.`;
+
+                message.style.color = 'green';
+
+                renderBookedSeats();
+
+            } else {
+
+                message.textContent = `Seat ${seatNumber} is not booked.`;
+
+                message.style.color = 'red';
+
+            }
+
+
+
+            document.getElementById('cancelForm').reset();
+
+        });
+
+
+
+        renderBookedSeats();
+
+    });
+
+    
+
+    
+
+    
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+        const foodMenu = [];
+
+        const beverageMenu = [];
+
+        const foodMenuList = document.getElementById('foodMenu');
+
+        const beverageMenuList = document.getElementById('beverageMenu');
+
+
+
+        function renderMenu(menu, menuList) {
+
+            menuList.innerHTML = '';
+
+            menu.forEach((item, index) => {
+
+                const li = document.createElement('li');
+
+                li.textContent = item;
+
+                const deleteButton = document.createElement('button');
+
+                deleteButton.textContent = 'Delete';
+
+                deleteButton.addEventListener('click', () => {
+
+                    menu.splice(index, 1);
+
+                    renderMenu(menu, menuList);
+
+                });
+
+                li.appendChild(deleteButton);
+
+                menuList.appendChild(li);
+
+            });
+
+        }
+
+
+
+        document.getElementById('menuForm').addEventListener('submit', (e) => {
+
+            e.preventDefault();
+
+            const menuItem = document.getElementById('menuItem').value;
+
+            const category = document.getElementById('category').value;
+
+
+
+            if (category === 'food') {
+
+                foodMenu.push(menuItem);
+
+                renderMenu(foodMenu, foodMenuList);
+
+            } else if (category === 'beverage') {
+
+                beverageMenu.push(menuItem);
+
+                renderMenu(beverageMenu, beverageMenuList);
+
+            }
+
+            document.getElementById('menuForm').reset();
+
+        });
+
+        renderMenu(foodMenu, foodMenuList);
+
+        renderMenu(beverageMenu, beverageMenuList);
+
+    });
+  
+
+</script>
+
+</body>
+
+</html>
+

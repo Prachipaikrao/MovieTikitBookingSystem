@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Movie Theater Screen Management</title>
+
+<style>
+
+    body {
+
+        font-family: Arial, sans-serif;
+
+        background-color: #f0f0f0;
+
+        margin: 0;
+
+        padding: 20px;
+
+    }
+
+    .container {
+
+        max-width: 800px;
+
+        margin: 0 auto;
+
+    }
+
+    .screen {
+
+        margin-bottom: 20px;
+
+        padding: 10px;
+
+        background-color: #fff;
+
+        border: 1px solid #ccc;
+
+        border-radius: 8px;
+
+    }
+
+    .screen-header {
+
+        display: flex;
+
+        justify-content: space-between;
+
+        align-items: center;
+
+        font-size: 24px;
+
+        margin-bottom: 10px;
+
+    }
+
+    .screen-actions {
+
+        display: flex;
+
+        gap: 10px;
+
+    }
+
+    .seats {
+
+        display: grid;
+
+        grid-template-columns: repeat(10, 30px); /* Adjust according to seat arrangement */
+
+        gap: 5px;
+
+        margin-top: 10px;
+
+    }
+
+    .seat {
+
+        width: 30px;
+
+        height: 30px;
+
+        background-color: lightgray;
+
+        border: 1px solid #ccc;
+
+        text-align: center;
+
+        line-height: 30px;
+
+        cursor: pointer;
+
+    }
+
+    .seat.reserved {
+
+        background-color: #ffcccb; /* Light red */
+
+    }
+
+    .seat.selected {
+
+        background-color: #bdf7f1; /* Light blue */
+
+    }
+
+    .action-button {
+
+        padding: 8px 16px;
+
+        background-color: grey;
+
+        color: black;
+
+        border: none;
+
+        cursor: pointer;
+
+        border-radius: 4px;
+
+        font-size: 16px;
+
+    }
+     .b
+   {
+   background-color:#87CEEB;
+   }
+
+</style>
+
+</head>
+
+<body class="b">
+
+<div class="container">
+
+    <h1>Movie Theater Screen Management</h1>
+
+
+
+    <!-- Screen 1 -->
+
+    <div class="screen" id="screen1">
+
+        <div class="screen-header">
+
+            <div>Screen 1</div>
+
+            <div class="screen-actions">
+
+                <button onclick="configureSeats('screen1')">Configure Seats</button>
+
+                <button onclick="saveConfiguration('screen1')" class="action-button"><a href="payment.html" >Save Configuration</a></button>
+
+            </div>
+
+        </div>
+
+        <div class="seats" id="seats-screen1">
+
+            <!-- Seats will be dynamically added here -->
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Screen 2 (Example of Multiple Screens) -->
+
+    <div class="screen" id="screen2">
+
+        <div class="screen-header">
+
+            <div>Screen 2</div>
+
+            <div class="screen-actions">
+
+                <button onclick="configureSeats('screen2')">Configure Seats</button>
+
+                <button onclick="saveConfiguration('screen2')" class="action-button"><a href="payment.html" >Save Configuration</button>
+
+            </div>
+
+        </div>
+
+        <div class="seats" id="seats-screen2">
+
+            <!-- Seats will be dynamically added here -->
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+// Dummy data for initial seat arrangement
+
+let seatsData = {
+
+    screen1: [],
+
+    screen2: []
+
+};
+
+
+
+// Function to populate seats for a screen
+
+function populateSeats(screenId) {
+
+    const seatsDiv = document.getElementById(`seats-${screenId}`);
+
+    seatsDiv.innerHTML = ''; // Clear existing seats
+
+
+
+    // Example: Create 5 rows and 10 columns of seats
+
+    const rows = 5;
+
+    const cols = 10;
+
+
+
+    for (let row = 1; row <= rows; row++) {
+
+        for (let col = 1; col <= cols; col++) {
+
+            const seatId = `${screenId}-${row}-${col}`;
+
+            const seatDiv = document.createElement('div');
+
+            seatDiv.classList.add('seat');
+
+            seatDiv.setAttribute('id', seatId);
+
+            seatDiv.textContent = `${row}-${col}`;
+
+            seatDiv.addEventListener('click', () => selectSeat(seatDiv));
+
+            seatsDiv.appendChild(seatDiv);
+
+
+
+            // Initialize seat data in seatsData
+
+            seatsData[screenId].push({
+
+                id: seatId,
+
+                status: 'available' // Initially all seats are available
+
+            });
+
+        }
+
+    }
+
+}
+
+
+
+// Function to select/deselect seats
+
+function selectSeat(seatDiv) {
+
+    if (seatDiv.classList.contains('reserved')) {
+
+        alert('This seat is already reserved.');
+
+        return;
+
+    }
+
+    seatDiv.classList.toggle('selected');
+
+}
+
+
+
+// Function to configure seats
+
+function configureSeats(screenId) {
+
+    // Implement your seat configuration logic here
+
+    // For simplicity, we'll just alert a message in this example
+
+    alert(`Configuring seats for ${screenId}`);
+
+}
+
+
+
+// Function to save seat configuration
+
+function saveConfiguration(screenId) {
+
+    // Gather and prepare data for saving
+
+    const configurationData = {
+
+        screenId: screenId,
+
+        seats: seatsData[screenId]
+
+    };
+
+
+
+    // Example: Send data to server (simulate with console.log)
+
+    console.log('Sending configuration data to server:');
+
+    console.log(configurationData);
+
+    alert('Configuration saved successfully!');
+
+}
+
+
+
+// Initialize seats for Screen 1 and Screen 2
+
+populateSeats('screen1');
+
+populateSeats('screen2');
+
+</script>
+
+<button class="action-button" style="text-align:center ;margin-left:50%;"><a href="AdminPanel.html" >AdminPanel</a></button>
+
+
+</body>
+
+</html>

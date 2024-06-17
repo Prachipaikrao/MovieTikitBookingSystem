@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Generate Tikits</title>
+<style>
+
+ul {
+
+  list-style-type: none;
+
+  margin: 0;
+
+  padding: 0;
+
+  overflow: hidden;
+
+  background-color: white;
+
+}
+
+
+
+li {
+
+  float: right;
+
+}
+
+
+
+li a {
+
+  display: block;
+
+  color: purple;
+
+  font:bold;
+
+  text-align: center;
+
+  text-space:20px;
+
+  text-size:30px;
+
+  padding: 20px 22px;
+
+  text-decoration: none;
+
+}
+li a:hover {
+
+  background-color: grey;
+
+}
+
+ .b
+   {
+   background-color:skyblue;
+   }  
+ .parent {
+ 
+ margin-left:1px;
+  padding: 2rem 2rem;
+  text-align: center;
+
+  width: 90%;
+}
+.c {
+  display: inline-block;
+
+  padding: 1rem 1rem;
+  margin-top:300px;
+  height: 300px;
+  width: 600px;
+  text-align: center;
+  vertical-align: middle;
+
+  background-image:url("registration.jpg");
+  background-size:cover;
+
+}
+
+.child1 {
+  display: inline-block;
+  border: 1px solid white;
+  padding: 1rem 1rem;
+  height: 500px;
+  width: 500px;
+  text-align: center;
+  vertical-align: middle;
+  float:right;
+}
+
+</style>
+<body class="b">
+ <div class='parent'>
+    
+    
+        <div class='c'>
+
+        </div>
+        <div class='child1'>
+  <h1>Generate Tikit</h1>
+  
+  <label for="name">Enter Movie Name:</label>
+  <input type="text" id="name">
+  <br>
+  <br>
+  <hr>
+  
+   <label for="age">Enter Time:</label>
+  <input type="text" id="time">
+   <br>
+  <br>
+  <hr>
+
+  
+   <label for="position">Seat No:</label>
+  <input type="text" id="seat">
+    <br>
+  <br>
+
+  
+  <button onclick="generateCertificate()">Generate Tikits</button>
+    <br>
+  <br>
+  <hr>
+  
+
+  <!-- Canvas element to draw the certificate -->
+  <canvas id="certificateCanvas" width="800" height="600" style="display: none;"></canvas>
+
+  <!-- Hidden link to download the certificate -->
+  <a id="downloadLink" style="display: none;"></a>
+
+  <script>
+    function generateCertificate() {
+      var name = document.getElementById('name').value;
+      var time = document.getElementById('time').value;
+      var seat = document.getElementById('seat').value;
+  
+      var canvas = document.getElementById('certificateCanvas');
+      var ctx = canvas.getContext('2d');
+
+      // Clear canvas
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Draw certificate content
+      ctx.fillStyle = 'white';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = 'black';
+      ctx.font = '30px Arial';
+      ctx.fillText('Movie Schedule:', 100, 100);
+      ctx.fillText(name, 320,100);
+      
+      ctx.fillText('At', 150, 150);
+      ctx.fillText(time, 300, 150);
+      ctx.font = '20px Arial';
+      ctx.font = 'bold 30px Arial';
+    
+      ctx.font = '30px Arial';
+      ctx.fillText('SeatNO:', 150, 200);
+      ctx.fillText(seat, 300, 200);
+      ctx.font = '30px Arial';
+     
+      ctx.font = 'italic 20px Arial';
+      ctx.fillText('Date: ' + new Date().toDateString(), 300, 350);
+
+      // Convert canvas to image
+      var image = canvas.toDataURL('image/png');
+
+      // Create download link
+      var downloadLink = document.getElementById('downloadLink');
+      downloadLink.href = image;
+      downloadLink.download = 'certificate.png';
+      downloadLink.click();
+    }
+  </script>
+</body>
+</html>

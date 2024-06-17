@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+   <title>Login</title>
+   
+   <style>
+   .b
+   {
+   background-color:#87CEEB;
+   }
+      ul {
+
+  list-style-type: none;
+
+  margin: 0;
+
+  padding: 0;
+
+  overflow: hidden;
+
+  background-color: white;
+
+}
+
+
+
+li {
+
+  float: right;
+
+}
+
+
+
+li a {
+
+  display: block;
+
+  color: purple;
+
+  font:bold;
+
+  text-align: center;
+
+  text-space:20px;
+
+  text-size:30px;
+
+  padding: 20px 22px;
+
+  text-decoration: none;
+
+}
+li a:hover {
+
+  background-color: grey;
+
+}
+
+
+.body {
+background-color:#AAFF00;
+text-align: center  ;}
+   
+   
+ .parent {
+ 
+ margin-left:1px;
+  padding: 2rem 2rem;
+  text-align: center;
+
+  width: 90%;
+}
+.c {
+  display: inline-block;
+
+  padding: 1rem 1rem;
+  margin-top:100px;
+  height: 500px;
+  width: 600px;
+  text-align: center;
+
+  background-image:url("3idiots.jpg");
+
+  float:left;
+}
+
+.movie2{
+
+  display: inline-block;
+
+  padding: 1rem 1rem;
+  margin-top:100px;
+  height: 400px;
+  width: 600px;
+  text-align: center;
+
+  background-image:url("chhichhore.jpg");
+
+  float:left;
+}
+.movie3{
+
+  display: inline-block;
+
+  padding: 1rem 1rem;
+  margin-top:100px;
+  height: 500px;
+  width: 600px;
+  text-align: center;
+
+  background-image:url("infinity.jpg");
+
+  float:left;
+}
+.movie4{
+
+  display: inline-block;
+
+  padding: 1rem 1rem;
+  margin-top:100px;
+  height: 500px;
+  width: 600px;
+  text-align: center;
+
+  background-image:url("banwabanvi.jpg");
+
+  float:left;
+}
+
+.child1 {
+
+   margin-top:100px;
+
+  padding: 1rem 1rem;
+  height: 500px;
+  width: 600px;
+  text-align: center;
+  vertical-align: middle;
+  float:right;
+}
+
+
+.ch1
+{
+    display: inline-block;
+
+  padding: 1rem 1rem;
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  vertical-align: middle;
+
+}
+
+
+ </style>
+
+</head>
+
+<body class="b">
+<nav class="navbar">
+
+      <ul>
+      <li><a  href="AdminPanel.html"><b>Admin Panel</b></a></li>
+   <li><a href="ShowSeats"><b>Seat Available</b></a></li>
+    
+        <li><a href="Index.html"><b>Home</b></a></li>
+    
+ 
+
+</ul>
+</nav>
+<h1 style="text-align:center;"> Available Movies</h1>
+    <div id="movie-list"></div>
+    <div>
+    <div class='parent'>
+    
+    <div class='c'>
+    </div>
+
+    <div class='child1'>
+    <legend style="text-align:center;font-size:30px; ">Movie Title</legend>
+    <hr style="height:2px;width:300px; text-align:center;">
+    
+              <br>
+              <br>
+              <h3>
+              <span id="movie-title"></span>
+              Movie Name: 3 Idiots 
+              <br>
+              <br>
+              genre: 'ComedyRomance'
+              <br>
+              <br>
+              ShowTimes: '12:00 PM'
+              <button style='width:200px; height:30px;' ><a href="seat-selection.html" style="text-decoration:none; background-color:white;color:black;">BookYourShow</a> </button>
+               <br>
+              ShowTimes: '3:00 PM'
+
+              <button style='width:200px; height:30px;' ><a href="seat-selection.html" style="text-decoration:none; background-color:white;color:black;">BookYourShow</a> </button>
+               <br>
+              ShowTimes: '6:00 PM'
+              <button style='width:200px; height:30px;' ><a href="seat-selection.html" style="text-decoration:none; background-color:white;color:black;">BookYourShow</a> </button>
+               <br>
+     
+              </h3>
+              <form method="post" action="seat-selection.html">
+ 
+              </div>
+ 
+             </div>
+             </div>
+ 
+              <div>
+    <div class='parent'>
+         <div class='movie2'>
+         </div>
+
+    <div class='child1'>
+         <legend style="text-align:center;font-size:30px; ">Movie Title</legend>
+                       <hr style="height:2px;width:300px; text-align:center;">
+              <br>
+              <br>
+              <h3>
+              Movie Name: Chhichhore 
+              <br>
+              <br>
+              genre: 'Educational'
+              <br>
+              <br>
+              showtimes: '12:45 PM'
+              <button style='width:200px; height:30px;' ><a href="seat-selection.html" style="text-decoration:none; background-color:white;color:black;">BookYourShow</a> </button>
+             <br>
+             showtimes: '2:00 PM'
+
+              <button style='width:200px; height:30px;' ><a href="seat-selection.html" style="text-decoration:none; background-color:white;color:black;">BookYourShow</a> </button>
+               <br>
+              showtimes: '6:00 PM'
+              <button style='width:200px; height:30px;' ><a href="seat-selection.html" style="text-decoration:none; background-color:white;color:black;">BookYourShow</a> </button>
+              
+              <br></h3>
+              <form method="post" action="seat-selection.html">
+              </div>
+              </div>
+              </div>
+
+ 
+ </div>
+ </div>
+ 
+ <div>
+ 
+    <div class='parent'>
+         <div class='movie3'>
+          </div>
+
+    <div class='child1'>
+         <legend style="text-align:center;font-size:30px; ">Movie Title</legend>
+                       <hr style="height:2px;width:300px; text-align:center;">
+              <br>
+              <br>
+              <h3>
+              Movie Name:The Man Who Knew Infinity
+              <br>
+              <br>
+              genre: British biographical drama
+              <br>
+              <br>
+              showtimes: '9:00 PM'
+              <button style='width:200px; height:30px;' ><a href="seat-selection.html" style="text-decoration:none; background-color:white;color:black;">BookYourShow</a> </button>
+              <br>
+               showtimes: '12:00 PM'
+
+              <button style='width:200px; height:30px;' ><a href="seat-selection.html" style="text-decoration:none; background-color:white;color:black;">BookYourShow</a> </button>
+              <br>
+               showtimes: '3:00 PM'
+              <button style='width:200px; height:30px;' ><a href="seat-selection.html" style="text-decoration:none; background-color:white;color:black;">BookYourShow</a> </button>
+ 
+              <br>
+     
+              </h3>
+ 
+ <form method="post" action="seat-selection.html">
+ 
+ </div>
+ 
+ </div>
+ </div>
+ </div>
+ </div>
+ 
+ <div>
+    <div class='parent'>
+         <div class='movie4'>
+          </div>
+
+    <div class='child1'>
+         <legend style="text-align:center;font-size:30px; ">Movie Title</legend>
+                       <hr style="height:2px;width:300px; text-align:center;">
+              <br>
+              <br>
+              <h3>
+              Movie Name:Ashi hi Banva Banvi
+              <br>
+              <br>
+              genre: 'Comedy'
+              <br>
+              <br>
+              showtimes: '10:00 PM'
+              <button style='width:200px; height:30px;' ><a href="seat-selection.html" style="text-decoration:none; background-color:white;color:black;">BookYourShow</a> </button>
+  			  <br>
+              showtimes: '1:30 PM'
+
+              <button style='width:200px; height:30px;' ><a href="seat-selection.html" style="text-decoration:none; background-color:white;color:black;">BookYourShow</a> </button>
+  			 <br>
+  				showtimes: '5:00 PM'
+              <button style='width:200px; height:30px;' ><a href="seat-selection.html" style="text-decoration:none; background-color:white;color:black;">BookYourShow</a> </button>
+ 
+              
+              <br>
+     
+              </h3>
+ <form method="post" action="seat-selection.html">
+ 
+ </div>
+ 
+ </div>
+ </div>
+ </div>
+   
+   
+   <div>
+      
+ 
+ </div>
+ </div>
+   </div>
+</form> 
+</body>
+</html>

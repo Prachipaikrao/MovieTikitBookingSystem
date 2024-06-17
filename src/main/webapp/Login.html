@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+   <title>Login</title>
+   
+   <style>
+   .b
+   {
+   background-color:#87CEEB;
+   }
+   ul {
+
+  list-style-type: none;
+
+  margin: 0;
+
+  padding: 0;
+
+  overflow: hidden;
+
+  background-color: white;
+
+}
+
+
+
+li {
+
+  float: right;
+
+}
+
+
+
+li a {
+
+  display: block;
+
+  color: purple;
+
+  font:bold;
+
+  text-align: center;
+
+  text-space:20px;
+
+  font-size:25px;
+
+  padding: 20px 22px;
+
+  text-decoration: none;
+
+}
+li a:hover {
+
+  background-color: grey;
+
+}
+.body {
+background-color:#AAFF00;
+text-align: center  ;}
+   
+   
+ .parent {
+ 
+ margin-left:1px;
+  padding: 2rem 2rem;
+  text-align: center;
+
+  width: 90%;
+}
+.c {
+  display: inline-block;
+
+  padding: 1rem 1rem;
+  margin-top:200px;
+  height: 400px;
+  width: 600px;
+  text-align: center;
+
+  background-image:url("Login.jpg");
+
+  float:left;
+}
+
+.child1 {
+  display: inline-block;
+  border: 1px solid white;
+  padding: 1rem 1rem;
+  height: 500px;
+  width: 500px;
+  text-align: center;
+  vertical-align: middle;
+  float:right;
+}
+
+
+.ch1
+{
+    display: inline-block;
+
+  padding: 1rem 1rem;
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  vertical-align: middle;
+
+}
+
+
+ </style>
+  <script >
+   function register()
+   {
+	   
+	   alert("Login sucessfully Start preparation ");
+   }
+   
+   </script>
+</head>
+
+<body class="b">
+
+
+    <div class='parent'>
+         <div class='c'>
+          </div>
+
+    <div class='child1'>
+         <legend style="text-align:center;font-size:30px; ">Login FORM</legend>
+                       <hr style="height:2px;width:300px; text-align:center;">
+              <br>
+              <br>
+ 
+ 
+ <form method="post" action="LoginServlet">
+ 
+ <label for="user" style="font-size:25px">UserName</label><br>
+<input type="text" style="width:300px;"  id="user" name="name" required><br><br><br>
+
+    <label for="passl" style="font-size:25px">Password</label><br>
+     <input type="text" style="width:300px;" id="pass" name="password" required><br><br><br>
+      
+
+<input type="submit" onclick="register()"style="width:200px;font-size:20px " name="Login" required>
+
+   </div>
+   
+</form> 
+</body>
+</html>
